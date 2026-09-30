@@ -242,7 +242,42 @@
     .rate-points { list-style:none; margin-top:25px; display:grid; gap:12px; position:relative; z-index:1; }
     .rate-points li { display:flex; gap:10px; align-items:flex-start; font-size:.84rem; }
     .rate-points span { color:var(--champagne); font-weight:900; }
-    @media (max-width:950px) { .rates-layout { grid-template-columns:1fr; } }
+    /* SHIPPING RATES RESPONSIVE */
+    .rates-card { min-width:0; }
+    .rates-table-wrap { width:100%; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }
+    .rates-table { width:100%; min-width:620px; }
+    .rate-highlight { min-width:0; }
+    @media (max-width:950px) {
+      .rates-layout { grid-template-columns:1fr; }
+      .rates-card, .rate-highlight { width:100%; }
+      .rates-table { min-width:620px; }
+    }
+    @media (max-width:650px) {
+      #rates .section-head { margin-bottom:24px; }
+      #rates .section-head h2 { font-size:clamp(1.8rem,8vw,2.35rem); }
+      #rates .rates-layout { gap:16px; }
+      #rates .rates-card { padding:14px; border-radius:18px; }
+      #rates .rates-table-wrap { border-radius:12px; overflow-x:auto; scrollbar-width:thin; }
+      #rates .rates-table { min-width:560px; font-size:.76rem; }
+      #rates .rates-table th, #rates .rates-table td { padding:11px 10px; white-space:nowrap; }
+      #rates .rates-table th:first-child { min-width:105px; }
+      #rates .rates-table th:nth-child(2) { min-width:145px; }
+      #rates .rates-table th:nth-child(3) { min-width:90px; }
+      #rates .rates-table th:nth-child(4) { min-width:115px; }
+      #rates .rate-price { font-size:1rem; }
+      #rates .rate-note { font-size:.7rem; margin:10px 2px 0; }
+      #rates .rate-highlight { padding:20px; border-radius:18px; }
+      #rates .rate-highlight h3 { font-size:1.45rem; max-width:none; }
+      #rates .rate-highlight p { font-size:.82rem; }
+      #rates .rate-points { margin-top:18px; gap:9px; }
+      #rates .rate-points li { font-size:.78rem; }
+    }
+    @media (max-width:380px) {
+      #rates .rates-card { padding:10px; }
+      #rates .rates-table { min-width:530px; }
+      #rates .rates-table th, #rates .rates-table td { padding:9px 8px; font-size:.72rem; }
+      #rates .rate-highlight { padding:17px; }
+    }
 
     /* HOW */
     .steps { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
